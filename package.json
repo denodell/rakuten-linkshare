@@ -1,6 +1,6 @@
 {
   "name": "rakuten-linkshare",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Rakuten LinkShare API Helper Methods For Node / JavaScript",
   "author": {
     "name": "Den Odell",
