@@ -34,10 +34,6 @@ function fetchXml(url, headers) {
 		return response
 	})
 	.then(response => response.text())
-	.then(xml => {
-		fs.writeFileSync('./links.xml', xml, 'utf-8')
-		return xml
-	})
 }
 
 function fetchXmlAsJson(url, headers) {

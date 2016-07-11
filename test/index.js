@@ -10,6 +10,7 @@ describe(`Rakuten LinkShare`, it => {
 
 	beforeEach(() => {
 		sinon.stub(networkLib, 'initialise').returns(Promise.resolve('fake-access-token'))
+
 		RL = new RakutenLinkShare({
 			reportingToken: '12345',
 			securityToken: '98765',

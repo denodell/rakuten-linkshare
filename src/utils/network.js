@@ -1,4 +1,4 @@
-import fetch, { fetchXmlAsJson } from './fetch'
+import fetchLib from './fetch'
 
 let expiry = new Date()
 let accessToken
@@ -37,7 +37,7 @@ async function initialise(authorisationHeader, username, password, scope) {
 
 async function fetchData(url, authorisationHeader, username, password, scope) {
 	let accessToken = await exported.initialise(authorisationHeader, username, password, scope)
-	return fetchXmlAsJson(url, {
+	return fetchLib.fetchXmlAsJson(url, {
 		'Authorization': `Bearer ${accessToken}`,
 	})
 }
@@ -54,7 +54,7 @@ async function requestData(url, authorisationHeader, username, password, scope) 
 async function requestJsonData(url, authorisationHeader, username, password, scope) {
 	try {
 		let accessToken = await exported.initialise(authorisationHeader, username, password, scope)
-		return fetch.fetchJson(url, {
+		return fetchLib.fetchJson(url, {
 			'Authorization': `Bearer ${accessToken}`,
 		})
 	} catch (err) {
