@@ -1,7 +1,8 @@
-import { fetchXmlAsJson } from './fetch'
+import fetch, { fetchXmlAsJson } from './fetch'
 
 let expiry = new Date()
 let accessToken
+let exported = {}
 
 async function initialise(authorisationHeader, username, password, scope) {
 	if (new Date() < expiry) {
@@ -35,18 +36,34 @@ async function initialise(authorisationHeader, username, password, scope) {
 }
 
 async function fetchData(url, authorisationHeader, username, password, scope) {
-	let accessToken = await initialise(authorisationHeader, username, password, scope)
+	let accessToken = await exported.initialise(authorisationHeader, username, password, scope)
 	return fetchXmlAsJson(url, {
-		'Accept': 'application/json; charset=utf-8', // TODO: Ignored right now for some reason? No JSON is returned, only XML
 		'Authorization': `Bearer ${accessToken}`,
 	})
 }
 
-export async function requestData(url, authorisationHeader, username, password, scope) {
+async function requestData(url, authorisationHeader, username, password, scope) {
 	try {
 		let data = await fetchData(url, authorisationHeader, username, password, scope)
 		return Promise.resolve(data)
 	} catch (err) {
 		throw new Error(err)
 	}
+}
+
+async function requestJsonData(url, authorisationHeader, username, password, scope) {
+	try {
+		let accessToken = await exported.initialise(authorisationHeader, username, password, scope)
+		return fetch.fetchJson(url, {
+			'Authorization': `Bearer ${accessToken}`,
+		})
+	} catch (err) {
+		throw new Error(err)
+	}
+}
+
+module.exports = exported = {
+	initialise,
+	requestData,
+	requestJsonData,
 }

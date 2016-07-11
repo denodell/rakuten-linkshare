@@ -1,0 +1,20 @@
+[
+  {
+    "etransaction_id": "c123456d789ccc01234aae56e78d9ea0",
+    "advertiser_id": 1111,
+    "sid": 22222,
+    "order_id": "333333333",
+    "member_id": "444444",
+    "sku_number": "5555555",
+    "sale_amount": 8200.46,
+    "quantity": 1,
+    "commissions": 0,
+    "process_date": "Wed Apr 30 2014 03:07:13 GMT+0000 (UTC)",
+    "transaction_date": "Wed Apr 30 2014 03:07:00 GMT+0000 (UTC)",
+    "transaction_type": "realtime",
+    "product_name": "Something really fancy",
+    "u1": "adc99999999cda",
+    "currency": "USD",
+    "is_event": "Y"
+  }
+]

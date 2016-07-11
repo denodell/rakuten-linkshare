@@ -7,6 +7,7 @@ Provides support for the following data types:
 
  - Merchants
  - Links
+ - Transactions
 
 Bear in mind that some calls may take a little while to return if they contain a large data set. This is because we do multiple API calls to get all pages of data, which we then stitch together in the output for your benefit.
 
@@ -42,6 +43,14 @@ Get links linked to the websiteId
 
 ```
 RL.getLinks()
+```
+
+### Transactions
+
+Get transactions linked to the websiteId
+
+```
+RL.getTransactions()
 ```
 
 ## Test

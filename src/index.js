@@ -43,23 +43,23 @@ export default class RakutenLinkShare {
 		})
 	}
 
+	getTransactions() {
+		return new Promise((resolve, reject) => {
+			const { reportingToken, authorisationHeader, username, password, scope } = this.options
+
+			requestTransactions({
+				reportingToken,
+				authorisationHeader,
+				username,
+				password,
+				scope,
+			}).then(resolve).catch(reject)
+		})
+	}
+
   // TODO
-  getVoucherCodes() {
-
-  }
+	getProducts() {}
 
   // TODO
-  getTransactions() {
-
-  }
-
-  // TODO
-  getProducts() {
-
-  }
-
-  // TODO
-  searchProducts() {
-
-  }
+	searchProducts() {}
 }

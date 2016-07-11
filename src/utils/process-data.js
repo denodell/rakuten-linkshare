@@ -1,3 +1,5 @@
+import _ from 'lodash'
+
 export function normalizeAdvertiserData(merchants) {
 	return merchants.map(merchant => {
 		let out = {}
@@ -69,11 +71,30 @@ export function normalizeLinkData(links) {
 					.replace('startdate', 'startDate').replace('enddate', 'endDate').replace('landurl', 'landUrl').replace('showurl', 'showUrl').replace('textdisplay', 'textDisplay')
 				let value = link[linkItem][0]
 				out[newDataItemName] = value
-				out[newDataItemName] = numberValueFields.includes(newDataItemName) ? +value : out[newDataItemName]
-				out[newDataItemName] = dateValueFields.includes(newDataItemName) && new Date(value) ? new Date(value) : out[newDataItemName]
+				out[newDataItemName] = numberValueFields.includes(newDataItemName) ? +out[newDataItemName] : out[newDataItemName]
+				out[newDataItemName] = dateValueFields.includes(newDataItemName) && new Date(out[newDataItemName]) ? new Date(out[newDataItemName]) : out[newDataItemName]
 			}
 		}
 		out.code = isCoupon(out) ? getCouponCode(out) : undefined
+		return out
+	})
+}
+
+export function normalizeTransactionData(transactions) {
+	let booleanValueFields = ['isEvent']
+	let dateValueFields = ['processDate', 'transactionDate']
+
+	return transactions.map(transaction => {
+		let out = {}
+		for (let transactionItem in transaction) {
+			if (transaction.hasOwnProperty(transactionItem)) {
+				let newDataItemName = _.camelCase(transactionItem.toLowerCase())
+				let value = transaction[transactionItem]
+				out[newDataItemName] = value
+				out[newDataItemName] = booleanValueFields.includes(newDataItemName) ? out[newDataItemName] === 'Y' : out[newDataItemName]
+				out[newDataItemName] = dateValueFields.includes(newDataItemName) ? new Date(out[newDataItemName]) : out[newDataItemName]
+			}
+		}
 		return out
 	})
 }

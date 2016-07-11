@@ -1,6 +1,6 @@
 {
   "name": "rakuten-linkshare",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Rakuten LinkShare API Helper Methods For Node / JavaScript",
   "author": {
     "name": "Den Odell",
@@ -19,7 +19,7 @@
     "compile": "babel --presets es2015,stage-0 -d dist/ src/",
     "prepublish": "npm run compile",
     "start": "node dist/index.js",
-    "test": "npm run compile && ava"
+    "test": "npm run compile && ava --serial"
   },
   "ava": {
     "babel": {
@@ -50,6 +50,7 @@
   },
   "devDependencies": {
     "ava": "^0.15.2",
-    "ava-spec": "^1.0.1"
+    "ava-spec": "^1.0.1",
+    "sinon": "^1.17.4"
   }
 }

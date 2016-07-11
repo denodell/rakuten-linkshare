@@ -1,6 +1,9 @@
 import fetch from 'isomorphic-fetch'
 import _ from 'lodash'
 import { parseString as parseXML } from 'xml2js'
+import fs from 'fs'
+
+let exported = {}
 
 function xmlToJSON(xml) {
 	return new Promise((resolve, reject) => {
@@ -22,24 +25,36 @@ function xmlToJSON(xml) {
 	})
 }
 
-export function fetchXmlAsJson(url, headers) {
-	return new Promise((resolve, reject) => {
-		return fetch(url, { headers })
-		.then(response => {
-			if (!response.ok) {
-				reject(response.statusText)
-				return
-			}
-			return response
-		})
-    .then(response => response.text())
-    .then(xmlToJSON)
-    .then(data => resolve(data))
-    .catch(reject)
+function fetchXml(url, headers) {
+	return fetch(url, { headers })
+	.then(response => {
+		if (!response.ok) {
+			throw response.statusText
+		}
+		return response
+	})
+	.then(response => response.text())
+	.then(xml => {
+		fs.writeFileSync('./links.xml', xml, 'utf-8')
+		return xml
 	})
 }
 
-export async function fetchJson(url, headers) {
-	let response = await fetch(url, { headers })
-	return await response.json()
+function fetchXmlAsJson(url, headers) {
+	return new Promise((resolve, reject) => {
+		return exported.fetchXml(url, headers)
+			.then(xmlToJSON)
+	    .then(data => resolve(data))
+	    .catch(reject)
+	})
+}
+
+function fetchJson(url, headers) {
+	return fetch(url, { headers }).then(response => response.json())
+}
+
+module.exports = exported = {
+	fetchXml,
+	fetchXmlAsJson,
+	fetchJson,
 }

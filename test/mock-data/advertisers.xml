@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ns1:getMerchByAppStatusResponse xmlns:ns1="http://endpoint.linkservice.linkshare.com/">
+  <ns1:return>
+    <ns1:applicationStatus>Approved</ns1:applicationStatus>
+    <ns1:categories>146 150 16 210 149 20 17 </ns1:categories>
+    <ns1:mid>560</ns1:mid>
+    <ns1:name>Rakuten Affiliate Network Welcome Program</ns1:name>
+    <ns1:offer>
+      <ns1:alsoName>256.1</ns1:alsoName>
+      <ns1:commissionTerms>sale : 0 and above 0%</ns1:commissionTerms>
+      <ns1:offerId>311675</ns1:offerId>
+      <ns1:offerName>Rakuten LinkShare Public Offer</ns1:offerName>
+    </ns1:offer>
+  </ns1:return>
+  <ns1:return>
+    <ns1:applicationStatus>Approved</ns1:applicationStatus>
+    <ns1:categories>2151 2154 2161 2150 2191 2160 2190 </ns1:categories>
+    <ns1:mid>24274</ns1:mid>
+    <ns1:name>LinkShare UK Affiliate Team</ns1:name>
+    <ns1:offer>
+      <ns1:alsoName>2.1</ns1:alsoName>
+      <ns1:commissionTerms>flat : 0 and above 2</ns1:commissionTerms>
+      <ns1:offerId>117947</ns1:offerId>
+      <ns1:offerName>LinkShare UK Base Offer</ns1:offerName>
+    </ns1:offer>
+  </ns1:return>
+  <ns1:return>
+    <ns1:applicationStatus>Approved</ns1:applicationStatus>
+    <ns1:categories>2170 2172 2100 2081 2173 2103 2062 2060 2080 </ns1:categories>
+    <ns1:mid>37865</ns1:mid>
+    <ns1:name>Starbucks EMEA Manufacturing B.V.</ns1:name>
+    <ns1:offer>
+      <ns1:alsoName>3.1</ns1:alsoName>
+      <ns1:commissionTerms>sale : 0 and above 4%</ns1:commissionTerms>
+      <ns1:offerId>267189</ns1:offerId>
+      <ns1:offerName>Baseline Offer 4%</ns1:offerName>
+    </ns1:offer>
+  </ns1:return>
+  <ns1:return>
+    <ns1:applicationStatus>Approved</ns1:applicationStatus>
+    <ns1:categories>108 207 109 246 153 </ns1:categories>
+    <ns1:mid>40192</ns1:mid>
+    <ns1:name>Couverture &amp; The Garbstore</ns1:name>
+    <ns1:offer>
+      <ns1:alsoName>5.1</ns1:alsoName>
+      <ns1:commissionTerms>sale : 0 and above 8%</ns1:commissionTerms>
+      <ns1:offerId>375093</ns1:offerId>
+      <ns1:offerName>Baseline Offer</ns1:offerName>
+    </ns1:offer>
+  </ns1:return>
+  <ns1:return>
+    <ns1:applicationStatus>Approved</ns1:applicationStatus>
+    <ns1:categories>108 107 134 140 153 </ns1:categories>
+    <ns1:mid>40327</ns1:mid>
+    <ns1:name>Boxfresh</ns1:name>
+    <ns1:offer>
+      <ns1:alsoName>11.1</ns1:alsoName>
+      <ns1:commissionTerms>sale : 0 and above 12%</ns1:commissionTerms>
+      <ns1:offerId>392653</ns1:offerId>
+      <ns1:offerName>Launch offer 12%</ns1:offerName>
+    </ns1:offer>
+  </ns1:return>
+  <ns1:return>
+    <ns1:applicationStatus>Approved</ns1:applicationStatus>
+    <ns1:categories>154 125 210 120 </ns1:categories>
+    <ns1:mid>40774</ns1:mid>
+    <ns1:name>Beer Hawk</ns1:name>
+    <ns1:offer>
+      <ns1:alsoName>31.1</ns1:alsoName>
+      <ns1:commissionTerms>sale : 0 and above 7%</ns1:commissionTerms>
+      <ns1:offerId>424497</ns1:offerId>
+      <ns1:offerName>Baseline offer SKU based Rakuten</ns1:offerName>
+    </ns1:offer>
+  </ns1:return>
+  <ns1:return>
+    <ns1:applicationStatus>Approved</ns1:applicationStatus>
+    <ns1:categories>108 134 109 140 153 </ns1:categories>
+    <ns1:mid>41000</ns1:mid>
+    <ns1:name>Figleaves UK</ns1:name>
+    <ns1:offer>
+      <ns1:alsoName>6.1</ns1:alsoName>
+      <ns1:commissionTerms>sale : 0 and above 2%</ns1:commissionTerms>
+      <ns1:offerId>416381</ns1:offerId>
+      <ns1:offerName>Baseline offer 2%</ns1:offerName>
+    </ns1:offer>
+  </ns1:return>
+  <ns1:return>
+    <ns1:applicationStatus>Approved</ns1:applicationStatus>
+    <ns1:categories>108 141 140 142 153 </ns1:categories>
+    <ns1:mid>41036</ns1:mid>
+    <ns1:name>Decathlon</ns1:name>
+    <ns1:offer>
+      <ns1:alsoName>47.12</ns1:alsoName>
+      <ns1:commissionTerms>sale : 0 and above 7%</ns1:commissionTerms>
+      <ns1:offerId>434513</ns1:offerId>
+      <ns1:offerName>Launch offer</ns1:offerName>
+    </ns1:offer>
+  </ns1:return>
+  <ns1:return>
+    <ns1:applicationStatus>Approved</ns1:applicationStatus>
+    <ns1:categories>108 154 109 140 153 </ns1:categories>
+    <ns1:mid>41171</ns1:mid>
+    <ns1:name>The Edinburgh Woollen Mil</ns1:name>
+    <ns1:offer>
+      <ns1:alsoName>35.1</ns1:alsoName>
+      <ns1:commissionTerms>sale : 0 and above 8%</ns1:commissionTerms>
+      <ns1:offerId>439015</ns1:offerId>
+      <ns1:offerName>Launch offer 8%</ns1:offerName>
+    </ns1:offer>
+  </ns1:return>
+  <ns1:return>
+    <ns1:applicationStatus>Approved</ns1:applicationStatus>
+    <ns1:categories>108 </ns1:categories>
+    <ns1:mid>41324</ns1:mid>
+    <ns1:name>Undandy</ns1:name>
+    <ns1:offer>
+      <ns1:alsoName>2.1</ns1:alsoName>
+      <ns1:commissionTerms>sale : 0-500 10% | 500-2000 12.5% | 2000 and above 15%</ns1:commissionTerms>
+      <ns1:offerId>426030</ns1:offerId>
+      <ns1:offerName>Undandy Affiliate Program</ns1:offerName>
+    </ns1:offer>
+  </ns1:return>
+  <ns1:return>
+    <ns1:applicationStatus>Approved</ns1:applicationStatus>
+    <ns1:categories>108 159 154 107 210 </ns1:categories>
+    <ns1:mid>41546</ns1:mid>
+    <ns1:name>Jack Russell Paris</ns1:name>
+    <ns1:offer>
+      <ns1:alsoName>2.1</ns1:alsoName>
+      <ns1:commissionTerms>sale : 0 and above 15%</ns1:commissionTerms>
+      <ns1:offerId>439122</ns1:offerId>
+      <ns1:offerName>Launch offer 15%</ns1:offerName>
+    </ns1:offer>
+  </ns1:return>
+  <ns1:return>
+    <ns1:applicationStatus>Approved</ns1:applicationStatus>
+    <ns1:categories>108 207 155 109 153 </ns1:categories>
+    <ns1:mid>41547</ns1:mid>
+    <ns1:name>henmores</ns1:name>
+    <ns1:offer>
+      <ns1:alsoName>2.1</ns1:alsoName>
+      <ns1:commissionTerms>sale : 0 and above 6%</ns1:commissionTerms>
+      <ns1:offerId>437306</ns1:offerId>
+      <ns1:offerName>Baseline Offer</ns1:offerName>
+    </ns1:offer>
+  </ns1:return>
+</ns1:getMerchByAppStatusResponse>
