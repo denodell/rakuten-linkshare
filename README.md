@@ -1,6 +1,8 @@
 Rakuten LinkShare API Helper Methods
 ------------------------------------
 
+_Warning: ALPHA release - unstable API and feature incomplete_
+
 Contains utilities to simplify interaction with the Rakuten LinkShare Affiliate Marketing Network APIs.
 
 Provides support for the following data types:

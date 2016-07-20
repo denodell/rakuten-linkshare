@@ -15,45 +15,39 @@ export default class RakutenLinkShare {
 		this.options = Object.assign({}, defaultOptions, options)
 	}
 
-	getAdvertisers({} = {}) {
-		return new Promise((resolve, reject) => {
-			const { reportingToken, authorisationHeader, username, password, scope } = this.options
+	getAdvertisers() {
+		const { reportingToken, authorisationHeader, username, password, scope } = this.options
 
-			requestAdvertisers({
-				reportingToken,
-				authorisationHeader,
-				username,
-				password,
-				scope,
-			}).then(resolve).catch(reject)
+		requestAdvertisers({
+			reportingToken,
+			authorisationHeader,
+			username,
+			password,
+			scope,
 		})
 	}
 
 	getLinks() {
-		return new Promise((resolve, reject) => {
-			const { reportingToken, authorisationHeader, username, password, scope } = this.options
+		const { reportingToken, authorisationHeader, username, password, scope } = this.options
 
-			requestLinks({
-				reportingToken,
-				authorisationHeader,
-				username,
-				password,
-				scope,
-			}).then(resolve).catch(reject)
+		return requestLinks({
+			reportingToken,
+			authorisationHeader,
+			username,
+			password,
+			scope,
 		})
 	}
 
 	getTransactions() {
-		return new Promise((resolve, reject) => {
-			const { reportingToken, authorisationHeader, username, password, scope } = this.options
+		const { reportingToken, authorisationHeader, username, password, scope } = this.options
 
-			requestTransactions({
-				reportingToken,
-				authorisationHeader,
-				username,
-				password,
-				scope,
-			}).then(resolve).catch(reject)
+		return requestTransactions({
+			reportingToken,
+			authorisationHeader,
+			username,
+			password,
+			scope,
 		})
 	}
 
