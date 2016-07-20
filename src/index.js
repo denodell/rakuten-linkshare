@@ -18,7 +18,7 @@ export default class RakutenLinkShare {
 	getAdvertisers() {
 		const { reportingToken, authorisationHeader, username, password, scope } = this.options
 
-		requestAdvertisers({
+		return requestAdvertisers({
 			reportingToken,
 			authorisationHeader,
 			username,
