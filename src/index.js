@@ -1,5 +1,5 @@
 import 'babel-polyfill'
-import { requestAdvertisers, requestLinks, requestProducts, requestTransactions } from './utils'
+import { requestAdvertisers, requestLinks, requestVouchers, requestTransactions } from './utils'
 //import dateFormat from 'dateformat'
 
 const defaultOptions = {
@@ -31,6 +31,18 @@ export default class RakutenLinkShare {
 		const { reportingToken, authorisationHeader, username, password, scope } = this.options
 
 		return requestLinks({
+			reportingToken,
+			authorisationHeader,
+			username,
+			password,
+			scope,
+		})
+	}
+
+	getVouchers() {
+		const { reportingToken, authorisationHeader, username, password, scope } = this.options
+
+		return requestVouchers({
 			reportingToken,
 			authorisationHeader,
 			username,

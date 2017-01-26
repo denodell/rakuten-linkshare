@@ -74,6 +74,16 @@ describe(`Rakuten LinkShare`, it => {
 		fetchLib.fetchXml.restore()
 	})
 
+	it(`Vouchers`, async expect => {
+		let xmlData = fs.readFileSync('./mock-data/vouchers.xml', 'utf-8')
+		sinon.stub(fetchLib, 'fetchXml').returns(Promise.resolve(xmlData))
+
+		const vouchers = await RL.getVouchers()
+		expect.true(vouchers.length > 0)
+
+		fetchLib.fetchXml.restore()
+	})
+
 	it(`Transactions`, async expect => {
 		let jsonData = fs.readFileSync('./mock-data/transactions.json', 'utf-8')
 		sinon.stub(fetchLib, 'fetchJson').returns(Promise.resolve(JSON.parse(jsonData)))

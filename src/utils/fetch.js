@@ -20,7 +20,7 @@ function xmlToJSON(xml) {
 				return
 			}
 
-			resolve(json.ns1Return)
+			resolve(json.ns1Return ? json.ns1Return : json)
 		})
 	})
 }

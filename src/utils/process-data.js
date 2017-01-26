@@ -80,6 +80,19 @@ export function normalizeLinkData(links) {
 	})
 }
 
+export function normalizeVoucherData(vouchers) {
+	const { link = [] } = vouchers
+	return link.map(({ offerdescription = [], offerstartdate = [], offerenddate = [], advertiserid = [], couponcode = [], clickurl = [], couponrestriction = [] }) => ({
+		advertiserId: advertiserid[0],
+		code: couponcode[0],
+		description: offerdescription[0],
+		restriction: couponrestriction[0],
+		startDate: offerstartdate[0],
+		endDate: offerenddate[0],
+		clickUrl: clickurl[0],
+	})).filter(link => !!link.code)
+}
+
 export function normalizeTransactionData(transactions) {
 	let booleanValueFields = ['isEvent']
 	let dateValueFields = ['processDate', 'transactionDate']
