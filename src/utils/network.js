@@ -20,9 +20,8 @@ async function initialise(authorisationHeader, username, password, scope) {
 			}),
 			body: `grant_type=password&username=${username}&password=${password}&scope=${scope}`,
 		})
-
 		if (!response.ok) {
-			throw response.statusText
+			throw await response.json()
 		}
 		let data = await response.json()
 
