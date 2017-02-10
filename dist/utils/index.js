@@ -144,7 +144,7 @@ function requestBanners(_ref5) {
 	    campaignId = _ref5.campaignId,
 	    page = _ref5.page;
 
-	var url = 'https://api.rakutenmarketing.com/linklocator/1.0/getTextLinks/' + mid + '/' + cat + '/' + startDate + '/' + endDate + '/' + size + '/' + campaignId + '/' + page;
+	var url = 'https://api.rakutenmarketing.com/linklocator/1.0/getBannerLinks/' + mid + '/' + cat + '/' + startDate + '/' + endDate + '/' + size + '/' + campaignId + '/' + page;
 
 	return new _promise2.default(function () {
 		var _ref6 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee3(resolve, reject) {

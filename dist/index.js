@@ -45,7 +45,8 @@ var RakutenLinkShare = function () {
 		}
 	}, {
 		key: 'getLinks',
-		value: function getLinks(options) {
+		value: function getLinks() {
+			var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
 			var _authParams = this.authParams,
 			    authorisationHeader = _authParams.authorisationHeader,
 			    username = _authParams.username,
@@ -68,7 +69,8 @@ var RakutenLinkShare = function () {
 		}
 	}, {
 		key: 'getBanners',
-		value: function getBanners(options) {
+		value: function getBanners() {
+			var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
 			var _authParams2 = this.authParams,
 			    authorisationHeader = _authParams2.authorisationHeader,
 			    username = _authParams2.username,

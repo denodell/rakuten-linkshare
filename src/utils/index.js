@@ -29,7 +29,7 @@ export function requestLinks({ authorisationHeader, username, password, scope, m
 }
 
 export function requestBanners({ authorisationHeader, username, password, scope, mid, cat, startDate, endDate, size, campaignId, page }) {
-	let url = `https://api.rakutenmarketing.com/linklocator/1.0/getTextLinks/${mid}/${cat}/${startDate}/${endDate}/${size}/${campaignId}/${page}`
+	let url = `https://api.rakutenmarketing.com/linklocator/1.0/getBannerLinks/${mid}/${cat}/${startDate}/${endDate}/${size}/${campaignId}/${page}`
 
 	return new Promise(async function(resolve, reject) {
 		try {

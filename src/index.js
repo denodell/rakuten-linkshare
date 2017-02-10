@@ -18,7 +18,7 @@ export default class RakutenLinkShare {
 		return requestAdvertisers(this.authParams)
 	}
 
-	getLinks(options) {
+	getLinks(options = {}) {
 		const { authorisationHeader, username, password, scope } = this.authParams
 
 		return requestLinks({
@@ -35,7 +35,7 @@ export default class RakutenLinkShare {
 		})
 	}
 
-	getBanners(options) {
+	getBanners(options = {}) {
 		const { authorisationHeader, username, password, scope } = this.authParams
 
 		return requestBanners({
