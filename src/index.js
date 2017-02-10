@@ -1,9 +1,8 @@
 import 'babel-polyfill'
-import { requestAdvertisers, requestLinks, requestVouchers, requestTransactions } from './utils'
+import { requestAdvertisers, requestLinks, requestBanners, requestVouchers, requestTransactions } from './utils'
 //import dateFormat from 'dateformat'
 
 const defaultOptions = {
-	reportingToken: '',
 	authorisationHeader: '',
 	username: '',
 	password: '',
@@ -16,51 +15,50 @@ export default class RakutenLinkShare {
 	}
 
 	getAdvertisers() {
-		const { reportingToken, authorisationHeader, username, password, scope } = this.options
-
-		return requestAdvertisers({
-			reportingToken,
-			authorisationHeader,
-			username,
-			password,
-			scope,
-		})
+		return requestAdvertisers(this.options)
 	}
 
 	getLinks() {
-		const { reportingToken, authorisationHeader, username, password, scope } = this.options
+		const { authorisationHeader, username, password, scope } = this.options
 
 		return requestLinks({
-			reportingToken,
 			authorisationHeader,
 			username,
 			password,
 			scope,
+			mid: this.options.mid || '-1',
+			cat: this.options.cat || '-1',
+			startDate: this.options.startDate || '',
+			endDate: this.options.endDate || '',
+			campaignId: this.options.campaignId || '-1',
+			page: this.options.page || '1',
+		})
+	}
+
+	getBanners() {
+		const { authorisationHeader, username, password, scope } = this.options
+
+		return requestBanners({
+			authorisationHeader,
+			username,
+			password,
+			scope,
+			mid: this.options.mid || '-1',
+			cat: this.options.cat || '-1',
+			startDate: this.options.startDate || '',
+			endDate: this.options.endDate || '',
+			size: this.options.size || '-1',
+			campaignId: this.options.campaignId || '-1',
+			page: this.options.page || '1',
 		})
 	}
 
 	getVouchers() {
-		const { reportingToken, authorisationHeader, username, password, scope } = this.options
-
-		return requestVouchers({
-			reportingToken,
-			authorisationHeader,
-			username,
-			password,
-			scope,
-		})
+		return requestVouchers(this.options)
 	}
 
 	getTransactions() {
-		const { reportingToken, authorisationHeader, username, password, scope } = this.options
-
-		return requestTransactions({
-			reportingToken,
-			authorisationHeader,
-			username,
-			password,
-			scope,
-		})
+		return requestTransactions(this.options)
 	}
 
   // TODO

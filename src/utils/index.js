@@ -2,7 +2,7 @@ import { requestData, requestJsonData } from './network'
 import dateFormat from 'dateformat'
 import { normalizeAdvertiserData, normalizeLinkData, normalizeVoucherData, normalizeTransactionData } from './process-data'
 
-export function requestAdvertisers({ reportingToken, authorisationHeader, username, password, scope }) {
+export function requestAdvertisers({ authorisationHeader, username, password, scope }) {
 	let url = `https://api.rakutenmarketing.com/linklocator/1.0/getMerchByAppStatus/approved`
 
 	return new Promise(async function(resolve, reject) {
@@ -15,8 +15,8 @@ export function requestAdvertisers({ reportingToken, authorisationHeader, userna
 	})
 }
 
-export function requestLinks({ reportingToken, authorisationHeader, username, password, scope }) {
-	let url = `https://api.rakutenmarketing.com/linklocator/1.0/getTextLinks/-1/-1///-1/1`
+export function requestLinks({ authorisationHeader, username, password, scope, mid, cat, startDate, endDate, campaignId, page  }) {
+	let url = `https://api.rakutenmarketing.com/linklocator/1.0/getTextLinks/${mid}/${cat}/${startDate}/${endDate}/${campaignId}/${page}`
 
 	return new Promise(async function(resolve, reject) {
 		try {
@@ -28,7 +28,20 @@ export function requestLinks({ reportingToken, authorisationHeader, username, pa
 	})
 }
 
-export function requestVouchers({ reportingToken, authorisationHeader, username, password, scope }) {
+export function requestBanners({ authorisationHeader, username, password, scope, mid, cat, startDate, endDate, size, campaignId, page }) {
+	let url = `https://api.rakutenmarketing.com/linklocator/1.0/getTextLinks/${mid}/${cat}/${startDate}/${endDate}/${size}/${campaignId}/${page}`
+
+	return new Promise(async function(resolve, reject) {
+		try {
+			let links = await requestData(url, authorisationHeader, username, password, scope)
+			resolve(normalizeLinkData(links))
+		} catch (err) {
+			reject(err)
+		}
+	})
+}
+
+export function requestVouchers({ authorisationHeader, username, password, scope }) {
 	let url = `https://api.rakutenmarketing.com/coupon/1.0?resultsperpage=500&pagenumber=1`
 
 	return new Promise(async function(resolve, reject) {
@@ -43,7 +56,7 @@ export function requestVouchers({ reportingToken, authorisationHeader, username,
 
 export function requestProducts() {}
 
-export function requestTransactions({ reportingToken, authorisationHeader, username, password, scope }) {
+export function requestTransactions({ authorisationHeader, username, password, scope }) {
 	const todayFormatted = dateFormat(new Date(), `yyyy-mm-dd%20HH:MM:ss`)
 	const startDate = new Date('2016-05-01')
 	const startDateFormatted = dateFormat(startDate, `yyyy-mm-dd%20HH:MM:ss`)

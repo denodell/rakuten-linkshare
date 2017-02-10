@@ -63,10 +63,10 @@ describe(`Rakuten LinkShare`, it => {
 			mid: '41036',
 			nid: 3,
 			clickUrl: 'http://click.linksynergy.com/fs-bin/click?id=TQvJyo21LpE&offerid=434513.15&type=3',
-			endDate: new Date("Tue Jul 12 2016 00:00:00 GMT+0200 (CEST)"),
+			endDate: new Date("Tue Jul 12 2016"),
 			landUrl: 'http://www.decathlon.co.uk/C-33096-football',
 			showUrl: 'http://ad.linksynergy.com/fs-bin/show?id=TQvJyo21LpE&bids=434513.15&type=3',
-			startDate: new Date("Tue Jun 21 2016 00:00:00 GMT+0200 (CEST)"),
+			startDate: new Date("Tue Jun 21 2016"),
 			textDisplay: 'Shop Football at Decathlon',
 			code: undefined,
 		})
