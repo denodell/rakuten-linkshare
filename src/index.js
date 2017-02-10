@@ -2,7 +2,7 @@ import 'babel-polyfill'
 import { requestAdvertisers, requestLinks, requestBanners, requestVouchers, requestTransactions } from './utils'
 //import dateFormat from 'dateformat'
 
-const defaultOptions = {
+const defaultAuthParams = {
 	authorisationHeader: '',
 	username: '',
 	password: '',
@@ -10,55 +10,55 @@ const defaultOptions = {
 }
 
 export default class RakutenLinkShare {
-	constructor(options) {
-		this.options = Object.assign({}, defaultOptions, options)
+	constructor(authParams) {
+		this.authParams = Object.assign({}, defaultAuthParams, authParams)
 	}
 
 	getAdvertisers() {
-		return requestAdvertisers(this.options)
+		return requestAdvertisers(this.authParams)
 	}
 
-	getLinks() {
-		const { authorisationHeader, username, password, scope } = this.options
+	getLinks(options) {
+		const { authorisationHeader, username, password, scope } = this.authParams
 
 		return requestLinks({
 			authorisationHeader,
 			username,
 			password,
 			scope,
-			mid: this.options.mid || '-1',
-			cat: this.options.cat || '-1',
-			startDate: this.options.startDate || '',
-			endDate: this.options.endDate || '',
-			campaignId: this.options.campaignId || '-1',
-			page: this.options.page || '1',
+			mid: options.mid || '-1',
+			cat: options.cat || '-1',
+			startDate: options.startDate || '',
+			endDate: options.endDate || '',
+			campaignId: options.campaignId || '-1',
+			page: options.page || '1',
 		})
 	}
 
-	getBanners() {
-		const { authorisationHeader, username, password, scope } = this.options
+	getBanners(options) {
+		const { authorisationHeader, username, password, scope } = this.authParams
 
 		return requestBanners({
 			authorisationHeader,
 			username,
 			password,
 			scope,
-			mid: this.options.mid || '-1',
-			cat: this.options.cat || '-1',
-			startDate: this.options.startDate || '',
-			endDate: this.options.endDate || '',
-			size: this.options.size || '-1',
-			campaignId: this.options.campaignId || '-1',
-			page: this.options.page || '1',
+			mid: options.mid || '-1',
+			cat: options.cat || '-1',
+			startDate: options.startDate || '',
+			endDate: options.endDate || '',
+			size: options.size || '-1',
+			campaignId: options.campaignId || '-1',
+			page: options.page || '1',
 		})
 	}
 
 	getVouchers() {
-		return requestVouchers(this.options)
+		return requestVouchers(this.authParams)
 	}
 
 	getTransactions() {
-		return requestTransactions(this.options)
+		return requestTransactions(this.authParams)
 	}
 
   // TODO
