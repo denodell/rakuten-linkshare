@@ -74,6 +74,32 @@ describe(`Rakuten LinkShare`, it => {
 		fetchLib.fetchXml.restore()
 	})
 
+	it(`Banners`, async expect => {
+		let xmlData = fs.readFileSync('./mock-data/banners.xml', 'utf-8')
+		sinon.stub(fetchLib, 'fetchXml').returns(Promise.resolve(xmlData))
+
+		let banners = await RL.getBanners()
+		expect.true(banners.length > 0)
+		expect.true(banners[0].campaignId === '0')
+		expect.true(banners[0].categoryId === '0')
+		expect.true(banners[0].categoryName === 'Default')
+		expect.true(banners[0].linkId === '10000118')
+		expect.true(banners[0].linkName === 'RAN - #1 Affiliate Network')
+		expect.true(banners[0].mid === '560')
+		expect.true(banners[0].nid === 1)
+		expect.true(banners[0].clickUrl === 'http://click.linksynergy.com/fs-bin/click?id=RMNs2QD9H9A&offerid=311675.10000118&type=4')
+		expect.true(JSON.stringify(banners[0].endDate) === JSON.stringify(new Date("Fri Sep 11 2021")))
+		expect.true(banners[0].height === '125')
+		expect.true(banners[0].iconUrl === 'http://merchant.linksynergy.com/fs/banners/560/560_10000118.jpg')
+		expect.true(banners[0].imgUrl === 'http://ad.linksynergy.com/fs-bin/show?id=RMNs2QD9H9A&bids=311675.10000118&type=4')
+		expect.true(banners[0].landUrl === '')
+		expect.true(banners[0].serverType === '4')
+		expect.true(banners[0].size === '4')
+		expect.true(JSON.stringify(banners[0].startDate) === JSON.stringify(new Date("Fri Sep 11 2015")))
+		expect.true(banners[0].width === '125')
+		fetchLib.fetchXml.restore()
+	})
+
 	it(`Vouchers`, async expect => {
 		let xmlData = fs.readFileSync('./mock-data/vouchers.xml', 'utf-8')
 		sinon.stub(fetchLib, 'fetchXml').returns(Promise.resolve(xmlData))

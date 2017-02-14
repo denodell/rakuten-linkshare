@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ns1:getBannerLinksResponse xmlns:ns1="http://endpoint.linkservice.linkshare.com/">
+    <ns1:return>
+        <ns1:campaignID>0</ns1:campaignID>
+        <ns1:categoryID>0</ns1:categoryID>
+        <ns1:categoryName>Default</ns1:categoryName>
+        <ns1:linkID>10000118</ns1:linkID>
+        <ns1:linkName>RAN - #1 Affiliate Network</ns1:linkName>
+        <ns1:mid>560</ns1:mid>
+        <ns1:nid>1</ns1:nid>
+        <ns1:clickURL>http://click.linksynergy.com/fs-bin/click?id=RMNs2QD9H9A&amp;offerid=311675.10000118&amp;type=4</ns1:clickURL>
+        <ns1:endDate>Sep 11, 2021</ns1:endDate>
+        <ns1:height>125</ns1:height>
+        <ns1:iconURL>http://merchant.linksynergy.com/fs/banners/560/560_10000118.jpg</ns1:iconURL>
+        <ns1:imgURL>http://ad.linksynergy.com/fs-bin/show?id=RMNs2QD9H9A&amp;bids=311675.10000118&amp;type=4</ns1:imgURL>
+        <ns1:landURL/>
+        <ns1:serverType>4</ns1:serverType>
+        <ns1:size>4</ns1:size>
+        <ns1:startDate>Sep 11, 2015</ns1:startDate>
+        <ns1:width>125</ns1:width>
+    </ns1:return>
+    <ns1:return>
+        <ns1:campaignID>0</ns1:campaignID>
+        <ns1:categoryID>0</ns1:categoryID>
+        <ns1:categoryName>Default</ns1:categoryName>
+        <ns1:linkID>10000119</ns1:linkID>
+        <ns1:linkName>RAN - #1 Affiliate Network</ns1:linkName>
+        <ns1:mid>560</ns1:mid>
+        <ns1:nid>1</ns1:nid>
+        <ns1:clickURL>http://click.linksynergy.com/fs-bin/click?id=RMNs2QD9H9A&amp;offerid=311675.10000119&amp;type=4</ns1:clickURL>
+        <ns1:endDate>Sep 11, 2021</ns1:endDate>
+        <ns1:height>60</ns1:height>
+        <ns1:iconURL>http://merchant.linksynergy.com/fs/banners/560/560_10000119.jpg</ns1:iconURL>
+        <ns1:imgURL>http://ad.linksynergy.com/fs-bin/show?id=RMNs2QD9H9A&amp;bids=311675.10000119&amp;type=4</ns1:imgURL>
+        <ns1:landURL/>
+        <ns1:serverType>4</ns1:serverType>
+        <ns1:size>3</ns1:size>
+        <ns1:startDate>Sep 11, 2015</ns1:startDate>
+        <ns1:width>234</ns1:width>
+    </ns1:return>
+    <ns1:return>
+        <ns1:campaignID>0</ns1:campaignID>
+        <ns1:categoryID>0</ns1:categoryID>
+        <ns1:categoryName>Default</ns1:categoryName>
+        <ns1:linkID>10000120</ns1:linkID>
+        <ns1:linkName>RAN - #1 Affiliate Network</ns1:linkName>
+        <ns1:mid>560</ns1:mid>
+        <ns1:nid>1</ns1:nid>
+        <ns1:clickURL>http://click.linksynergy.com/fs-bin/click?id=RMNs2QD9H9A&amp;offerid=311675.10000120&amp;type=4</ns1:clickURL>
+        <ns1:endDate>Sep 11, 2021</ns1:endDate>
+        <ns1:height>250</ns1:height>
+        <ns1:iconURL>http://merchant.linksynergy.com/fs/banners/560/560_10000120.jpg</ns1:iconURL>
+        <ns1:imgURL>http://ad.linksynergy.com/fs-bin/show?id=RMNs2QD9H9A&amp;bids=311675.10000120&amp;type=4</ns1:imgURL>
+        <ns1:landURL/>
+        <ns1:serverType>4</ns1:serverType>
+        <ns1:size>13</ns1:size>
+        <ns1:startDate>Sep 11, 2015</ns1:startDate>
+        <ns1:width>300</ns1:width>
+    </ns1:return>
+</ns1:getBannerLinksResponse>

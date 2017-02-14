@@ -79,7 +79,9 @@ function normalizeLinkData(links) {
 		var out = {};
 		for (var linkItem in link) {
 			if (link.hasOwnProperty(linkItem)) {
-				var newDataItemName = linkItem.replace(/^ns1/g, '').toLowerCase().replace('campaignid', 'campaignId').replace('categoryid', 'categoryId').replace('categoryname', 'categoryName').replace('linkid', 'linkId').replace('linkname', 'linkName').replace('clickurl', 'clickUrl').replace('startdate', 'startDate').replace('enddate', 'endDate').replace('landurl', 'landUrl').replace('showurl', 'showUrl').replace('textdisplay', 'textDisplay');
+				var newDataItemName = linkItem.replace(/^ns1/g, '').toLowerCase().replace(/(..+)(date|url|id|name|display|type)$/, function (a, m1, m2) {
+					return m1 + m2[0].toUpperCase() + m2.slice(1);
+				});
 				var value = link[linkItem][0];
 				out[newDataItemName] = value;
 				out[newDataItemName] = numberValueFields.includes(newDataItemName) ? +out[newDataItemName] : out[newDataItemName];
