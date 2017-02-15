@@ -39,6 +39,14 @@ Get a list of all advertisers in the Rakuten LinkShare system
 RL.getAdvertisers()
 ```
 
+### Banners
+
+Get a list of all banners linked to the websiteId
+
+```
+RL.getBanners()
+```
+
 ### Links
 
 Get links linked to the websiteId

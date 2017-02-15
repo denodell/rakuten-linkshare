@@ -1,6 +1,5 @@
 import 'babel-polyfill'
 import { requestAdvertisers, requestLinks, requestBanners, requestVouchers, requestTransactions } from './utils'
-//import dateFormat from 'dateformat'
 
 const defaultAuthParams = {
 	authorisationHeader: '',
@@ -18,38 +17,28 @@ export default class RakutenLinkShare {
 		return requestAdvertisers(this.authParams)
 	}
 
-	getLinks(options = {}) {
-		const { authorisationHeader, username, password, scope } = this.authParams
-
+	getLinks({ mid = '-1', cat = '-1', startDate = '', endDate = '', campaignId = '-1', page = '1' } = {}) {
 		return requestLinks({
-			authorisationHeader,
-			username,
-			password,
-			scope,
-			mid: options.mid || '-1',
-			cat: options.cat || '-1',
-			startDate: options.startDate || '',
-			endDate: options.endDate || '',
-			campaignId: options.campaignId || '-1',
-			page: options.page || '1',
+			...this.authParams,
+			mid,
+			cat,
+			startDate,
+			endDate,
+			campaignId,
+			page,
 		})
 	}
 
-	getBanners(options = {}) {
-		const { authorisationHeader, username, password, scope } = this.authParams
-
+	getBanners({ mid = '-1', cat = '-1', startDate = '', endDate = '', size = '-1', campaignId = '-1', page = '1' } = {}) {
 		return requestBanners({
-			authorisationHeader,
-			username,
-			password,
-			scope,
-			mid: options.mid || '-1',
-			cat: options.cat || '-1',
-			startDate: options.startDate || '',
-			endDate: options.endDate || '',
-			size: options.size || '-1',
-			campaignId: options.campaignId || '-1',
-			page: options.page || '1',
+			...this.authParams,
+			mid,
+			cat,
+			startDate,
+			endDate,
+			size,
+			campaignId,
+			page,
 		})
 	}
 

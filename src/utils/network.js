@@ -44,7 +44,7 @@ async function fetchData(url, authorisationHeader, username, password, scope) {
 async function requestData(url, authorisationHeader, username, password, scope) {
 	try {
 		let data = await fetchData(url, authorisationHeader, username, password, scope)
-		return Promise.resolve(data)
+		return data
 	} catch (err) {
 		throw new Error(err)
 	}

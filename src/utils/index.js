@@ -2,17 +2,15 @@ import { requestData, requestJsonData } from './network'
 import dateFormat from 'dateformat'
 import { normalizeAdvertiserData, normalizeLinkData, normalizeVoucherData, normalizeTransactionData } from './process-data'
 
-export function requestAdvertisers({ authorisationHeader, username, password, scope }) {
+export async function requestAdvertisers({ authorisationHeader, username, password, scope }) {
 	let url = `https://api.rakutenmarketing.com/linklocator/1.0/getMerchByAppStatus/approved`
 
-	return new Promise(async function(resolve, reject) {
-		try {
-			let advertisers = await requestData(url, authorisationHeader, username, password, scope)
-			resolve(normalizeAdvertiserData(advertisers))
-		} catch (err) {
-			reject(err)
-		}
-	})
+	try {
+		const advertisers = await requestData(url, authorisationHeader, username, password, scope)
+		return normalizeAdvertiserData(advertisers)
+	} catch (err) {
+		throw err
+	}
 }
 
 export function requestLinks({ authorisationHeader, username, password, scope, mid, cat, startDate, endDate, campaignId, page  }) {

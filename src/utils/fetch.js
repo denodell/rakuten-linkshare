@@ -39,13 +39,19 @@ function fetchXmlAsJson(url, headers) {
 	return new Promise((resolve, reject) => {
 		return exported.fetchXml(url, headers)
 			.then(xmlToJSON)
-	    .then(data => resolve(data))
-	    .catch(reject)
+			.then(data => resolve(data))
+			.catch(reject)
 	})
 }
 
 function fetchJson(url, headers) {
-	return fetch(url, { headers }).then(response => response.json())
+	return fetch(url, { headers })
+	.then(response => {
+		if (!response.ok) {
+			throw response.statusText
+		}
+		return response
+	}).then(response => response.json())
 }
 
 module.exports = exported = {
