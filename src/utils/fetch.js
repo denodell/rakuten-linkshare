@@ -1,7 +1,6 @@
 import fetch from 'isomorphic-fetch'
 import _ from 'lodash'
 import { parseString as parseXML } from 'xml2js'
-import fs from 'fs'
 
 let exported = {}
 
